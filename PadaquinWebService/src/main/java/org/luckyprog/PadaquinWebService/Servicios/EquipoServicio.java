@@ -33,5 +33,26 @@ public class EquipoServicio {
 			return null;
 		}
 	}
+	
+	public Equipo getEquipo(int id){
+		Connection c;
+		PreparedStatement ps;
+		ResultSet rs;
+		Equipo e = null;
+		try{
+			c = new Conexion().conectar();
+			String query = "SELECT * FROM equipo WHERE id_equipo=?";
+			ps=c.prepareStatement(query);
+			ps.setInt(1, id);
+			rs=ps.executeQuery();
+			while(rs.next()){
+                e = new Equipo(rs.getInt("id_equipo"),rs.getString("nombre_equipo"),rs.getString("imagen"));
+            }
+			return e;			
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
 
 }
