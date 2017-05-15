@@ -17,14 +17,14 @@ public class PartidoRecurso {
 	PartidoServicio ps = new PartidoServicio();
 	
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
 	public ArrayList<Partido> getPartidos(){
 		return ps.getAllPartidos();
 	}
 	
 	@GET
 	@Path("/{id_partido}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
 	public Partido getPartido(@PathParam("id_partido") int id_partido){
 		return ps.getPartido(id_partido);
 	}

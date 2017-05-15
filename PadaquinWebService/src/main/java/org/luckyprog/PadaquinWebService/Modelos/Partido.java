@@ -24,6 +24,19 @@ public class Partido {
 
 	
 	
+	public Partido(int id_partido, int semana, String fecha, int id_visitante, String visitante, int id_local,
+			String local) {
+		this.id_partido = id_partido;
+		this.semana = semana;
+		this.fecha = fecha;
+		this.id_visitante = id_visitante;
+		this.visitante = visitante;
+		this.id_local = id_local;
+		this.local = local;
+	}
+
+
+
 	public Partido(int id_partido, int semana, int mayor, int menor, String ganador, String local, int id_local,
 			String visitante, int id_visitante, String fecha, int primer_marcador) {
 		this.id_partido = id_partido;

@@ -17,14 +17,14 @@ public class EquipoRecurso {
 	EquipoServicio es = new EquipoServicio();
 	
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
 	public ArrayList<Equipo> getEquipos(){
 		return es.getAllEquipos();
 	}
 	
 	@GET
 	@Path("/{id_equipo}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
 	public Equipo getEquipo(@PathParam("id_equipo") int id_equipo){
 		return es.getEquipo(id_equipo);
 	}
